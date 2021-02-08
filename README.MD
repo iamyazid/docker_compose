@@ -34,10 +34,6 @@ if result not empty, vagrant is successfully installed
 cd .../docker_compose/install_docker_compose
 ```
 
-- Open Vagrantfile and change config.vm.network "public_network", bridge: "..."
-  according to your computer setting.
-  ![alt text](images/6.png "Title")
-
 - Spin the virtual machine
 
 ```console
@@ -68,6 +64,8 @@ docker ps
 docker-compose --version
 ```
 
+- change VM network to bridge and reboot the server.
+  ![alt text](images/6.png "Title")
 - Find ip address and later you can ssh through putty or winscp
 
 - To destroy VM. exit the VM, then type:
