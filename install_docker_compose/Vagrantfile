@@ -18,15 +18,21 @@ Vagrant.configure("2") do |config|
  config.vm.hostname = "ubuntumain01"
  config.vm.network "forwarded_port", guest: 8000, host: 8000
 
+ config.ssh.username = 'root'
+ config.ssh.password = 'vagrant'
+ config.ssh.insert_key = 'true'
+
  config.vm.provision "shell", inline: <<-SHELL
    systemctl disable apt-daily.service
    systemctl disable apt-daily.timer
 
-   sudo apt-get update -y
+   sudo apt-get update
    sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-   sudo apt-get update -y
+   sudo apt-get update
    sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+   systemctl start docker
    systemctl enable docker
    sudo curl -L "https://github.com/docker/compose/releases/download/1.28.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
    sudo chmod +x /usr/local/bin/docker-compose

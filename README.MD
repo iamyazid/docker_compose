@@ -23,3 +23,20 @@ vagrant --help
 ![alt text](images/3.png "Title")
 
 if result not empty, vagrant is successfully installed
+
+- Download this repository, extract and move to desktop.
+
+![alt text](images/4.png "Title")
+
+- change directory to your install_docker_compose_location
+
+```console
+cd .../docker_compose/install_docker_compose
+```
+
+- spin the virtual machine
+
+```console
+vagrant up
+```
+![alt text](images/5.png "Title")
