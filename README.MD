@@ -34,9 +34,44 @@ if result not empty, vagrant is successfully installed
 cd .../docker_compose/install_docker_compose
 ```
 
-- spin the virtual machine
+- Open Vagrantfile and change config.vm.network "public_network", bridge: "..."
+  according to your computer setting.
+  ![alt text](images/6.png "Title")
+
+- Spin the virtual machine
 
 ```console
 vagrant up
 ```
 ![alt text](images/5.png "Title")
+
+- ssh to virtual machine
+
+```console
+vagrant ssh
+```
+
+- Elevated to root. Password: vagrant
+
+```console
+su root
+```
+
+- Check docker status
+
+```console
+docker ps
+```
+- Check compose status
+
+```console
+docker-compose --version
+```
+
+- Find ip address and later you can ssh through putty or winscp
+
+- To destroy VM. exit the VM, then type:
+
+```console
+vagrant destroy
+```
