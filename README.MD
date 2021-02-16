@@ -64,10 +64,6 @@ docker ps
 docker-compose --version
 ```
 
-- change VM network to bridge and reboot the server.
-  ![alt text](images/6.png "Title")
-- Find ip address and later you can ssh through putty or winscp
-
 - To destroy VM. exit the VM, then type:
 
 ```console
