@@ -69,3 +69,5 @@ docker-compose --version
 ```console
 vagrant destroy
 ```
+
+- Download Notepad ++ at https://notepad-plus-plus.org/downloads/v7.9.3/
